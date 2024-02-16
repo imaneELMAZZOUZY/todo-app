@@ -1,0 +1,111 @@
+<div class="todo">
+    <button class="todo-btn" aria-label="toggle" [ngClass]="todo.completed ? 'todo-btn--completed' : ''"
+        (click)="changeCompletedStatus()"></button>
+    <div class="todo-info" [ngClass]="todo.completed ?
+     'todo--completed' : ''">
+        <!-- <div class="todo-text"> -->
+            <input type="text" class="todo-text" [(ngModel)]="todo.title" [disabled]="!isEditMode" />
+            <!-- title {{ todo.title }} -->
+        <!-- </div> -->
+        <div class="flex">
+            <div class="todo-date">
+                {{ todo.date_added | date: 'YYYY MMM dd' }}
+              
+            </div>
+
+            @if(isEditMode)
+            {
+                <select class="todo-priority" [(ngModel)]="todo.priority" [disabled]="!isEditMode"
+                    [ngClass]="getPriorityClass(todo.priority)">
+                    <option value="low">Low</option>
+                    <option value="medium">Medium</option>
+                    <option value="high">High</option>
+                </select>
+            }
+            @else()
+                {
+                    <div class="todo-priority" [ngClass]="getPriorityClass(todo.priority)">
+                    {{ todo.priority }}
+                    
+                </div>
+            
+            }   
+        </div>
+        
+         <textarea class="todo-description" type="text" [(ngModel)]="todo.description" [disabled]="!isEditMode" ></textarea>
+
+
+        
+
+    </div>
+
+    <button class="todo-delete-btn" [hidden]="todo.completed" (click)="isEditMode ? updateTodo() : toggleEditMode()">
+        <i class="fas" [ngClass]="{'fa-edit': !isEditMode, 'fa-check': isEditMode}"></i>
+    </button>
+
+    <button class="todo-delete-btn fas fa-times" (click)="deleteTodo()">
+    </button>
+</div>
+
+
+<!-- <div class="todo">
+    <button class="todo-btn" aria-label="toggle" [ngClass]="todo.completed ? 'todo-btn--completed' : ''"
+        (click)="markTodoAsCompleted()"></button>
+    <div [ngClass]="todo.completed ?
+     'todo--completed' : ''">
+
+        <input type="text" class="todo-text" [(ngModel)]="title" [disabled]="!isEditMode" />
+
+        <div class="flex">
+            <div class="todo-date">
+                {{ todo.date_added | date: 'MMM dd' }}
+                22.12.2021
+            </div>
+            <div class="todo-priority" [ngClass]="getPriorityClass(todo.priority)">
+                low
+            </div>
+
+            <select class="todo-priority" [(ngModel)]="title" [disabled]="!isEditMode"
+                [ngClass]="getPriorityClass(todo.priority)">
+                <option value="low">Low</option>
+                <option value="medium">Medium</option>
+                <option value="high">High</option>
+            </select>
+        </div>
+
+        <div>
+            <input class="todo-description" type="t" [(ngModel)]="description" [disabled]="!isEditMode" />
+        </div>
+    </div>
+
+    <button class="todo-delete-btn" (click)="deleteTodo()">
+        <img src="../../assets/images/icon-cross.svg" alt="Cross icon image to delete a todo" />
+    </button>
+</div> -->
+
+<!-- <div class="todo">
+    <button class="todo-btn" aria-label="toggle" [ngClass]="todo.completed ? 'todo-btn--completed' : ''"
+        (click)="markTodoAsCompleted()"></button>
+    <div [ngClass]="todo.completed ? 'todo-text--completed' : ''">
+        <div class="todo-text">
+        </div>
+        <div class="flex">
+            <div class="todo-date">
+                <input type="text" [(ngModel)]="todo.date_added" [disabled]="!isEditMode" />
+            </div>
+            <div class="todo-priority">
+                <input type="text" [(ngModel)]="todo.priority" [disabled]="!isEditMode" />
+            </div>
+        </div>
+        <div class="todo-description">
+            <textarea [(ngModel)]="todo.description" [disabled]="!isEditMode"></textarea>
+        </div>
+    </div>
+    <button class="todo-update-btn" (click)="toggleEditMode()">
+        {{ isEditMode ? 'Valider l\'update' : 'Update' }}
+    </button>
+
+    <button class="todo-delete-btn" (click)="deleteTodo()">
+        <img src="../../assets/images/icon-cross.svg" alt="Cross icon image to delete a todo" />
+    </button>
+</div> -->

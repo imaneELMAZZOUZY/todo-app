@@ -1,0 +1,200 @@
+.todo {
+    padding: 2rem 2.4rem;
+    display: flex;
+    align-items: center;
+    box-shadow: inset 0 -0.1rem 0 0 var(--btn-color);
+    transition: all 0.3s;
+    
+}
+
+.todo-info {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+
+}
+
+.todo-btn {
+    height: 2.4rem;
+    width: 2.4rem;
+    margin-right: 2rem;
+    background: linear-gradient(var(--bg-todo-color), var(--bg-todo-color)) padding-box,
+        linear-gradient(var(--btn-color), var(--btn-color)) border-box;
+    border: 1px solid transparent;
+    border-radius: 50%;
+    outline: none;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+
+
+.todo-btn:not(.todo-btn--completed):hover,
+.todo-btn:not(.todo-btn--completed):focus {
+    background: linear-gradient(var(--bg-todo-color), var(--bg-todo-color)) padding-box,
+        linear-gradient(to bottom right, rgba(85, 221, 255, 1), rgba(192, 88, 243, 1)) border-box;
+}
+
+.todo-btn--completed {
+    background-image: url("../../../assets/images/icon-check.svg"), linear-gradient(to bottom right, rgba(85, 221, 255, 1), rgba(192, 88, 243, 1));
+    background-position: center;
+    background-size: auto;
+    background-repeat: no-repeat;
+
+}
+
+.todo-text {
+    letter-spacing: -0.25px;
+    font-size: 2.5rem;
+    color: var(--text-color-300);
+    transition: all 0.3s;
+    margin-bottom: 0.6rem;
+    background: transparent;
+    border: none;
+
+    padding-right: 3rem;
+}
+
+
+.todo-date {
+    letter-spacing: -0.25px;
+    font-size: 1.3rem;
+    color: var(--text-color-300);
+    transition: all 0.3s;
+    margin-bottom: 0.2rem;
+    background: transparent;
+    border: none;
+    background: transparent;
+}
+
+
+.todo-priority {
+    letter-spacing: -0.25px;
+    color: var(--text-color-300);
+    transition: all 0.3s;
+    font-size: 1.6rem;
+    margin-bottom: 0.2rem;
+    background: transparent;
+    text-align: right;
+
+}
+
+
+.low-priority {
+    color: var(--low-priority);
+}
+
+.medium-priority {
+    color: var(--medium-priority);
+}
+
+.high-priority {
+    color: var(--high-priority);
+}
+
+.todo-description {
+    letter-spacing: -0.25px;
+    font-size: 1.6rem;
+    color: var(--text-color-300);
+    transition: all 0.3s;
+    margin-bottom: 0.3rem;
+    background: transparent;
+    border: none;
+    width: 100%;
+    overflow: hidden;
+
+}
+
+
+.todo--completed .todo-text,
+.todo--completed .todo-date,
+.todo--completed .todo-priority,
+.todo--completed .todo-description {
+
+    text-decoration: line-through;
+    color: var(--text-color-600);
+}
+
+
+.todo-delete-btn {
+    border: none;
+    border-radius: 0.5rem;
+    background: transparent;
+    margin-left: auto;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.todo-delete-btn:focus {
+    outline: none;
+    box-shadow: 0 0 0.2rem 0.15rem var(--shadow-color);
+}
+
+.todo-delete-btn img {
+    display: block;
+}
+
+@media (max-width: 40em) {
+    .todo {
+        padding: 1.6rem 2rem;
+    }
+
+    .todo-btn {
+        height: 2rem;
+        width: 2rem;
+        margin-right: 1.2rem;
+    }
+
+    .todo-text {
+        font-size: 1.2rem;
+        line-height: 1.2rem;
+        letter-spacing: -0.17px;
+        max-width: 80%;
+    }
+    .todo-text {
+        font-size: 1.2rem;
+        line-height: 1.2rem;
+        letter-spacing: -0.17px;
+        max-width: 80%;
+    }
+
+    .todo-date {
+        font-size: 1rem;
+        line-height: 1rem;
+        letter-spacing: -0.14px;
+    }
+
+    .todo-priority {
+        font-size: 1.2rem;
+        line-height: 1.2rem;
+        letter-spacing: -0.17px;
+    }
+
+    .todo-description {
+        font-size: 1rem;
+        line-height: 1rem;
+        letter-spacing: -0.14px;
+    }
+
+    .todo-info {
+        width: 64%;
+        max-width: 80%;
+    }
+
+
+
+    .todo-delete-btn img {
+        height: 1.2rem;
+        width: 1.2rem;
+    }
+}
+
+
+.flex {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+
+
+}

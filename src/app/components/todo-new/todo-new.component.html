@@ -1,0 +1,19 @@
+<form [formGroup]="newTodoForm" class="input-wrapper" (ngSubmit)="onSubmit()">
+    <h2 class="create-todo-title">
+        Create a Todo
+    </h2>
+    <div class="create-todo">
+        <!-- <input class="todo-checkbox" type="checkbox" formControlName="completed" /> -->
+        <div class="create-todo-form">
+            <select class="todo-select" formControlName="priority" >
+                <option value="low">Low</option>
+                <option value="medium">Medium</option>
+                <option value="high">High</option>
+            </select>
+            <input class="todo-input" type="text" placeholder="todo title..." formControlName="title" />
+            <textarea class="todo-description" type="text" placeholder="todo description..."
+                formControlName="description"></textarea>
+
+        </div>
+    </div>
+</form>

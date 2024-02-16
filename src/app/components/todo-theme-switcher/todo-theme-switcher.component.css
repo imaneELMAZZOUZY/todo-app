@@ -1,0 +1,22 @@
+  .header-theme-btn {
+      border: none;
+      outline: none;
+      background: transparent;
+      cursor: pointer;
+      transition: all 0.3s;
+  }
+
+  .header-theme-btn:hover,
+  .header-theme-btn:focus {
+      scale: 1.25;
+  }
+
+  .header-theme-btn img {
+      display: block;
+  }
+
+  @media (max-width: 40em) {
+      .header-theme-btn img {
+          width: 2rem;
+      }
+  }

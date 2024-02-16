@@ -1,0 +1,16 @@
+<div class="options-container">
+    <p class="todos-left">{{ numberOfTodosLeft }} number of todos left</p>
+    <ul class="main-options">
+        @for(option of todoOptions; track $index) {
+        <li>
+            <button class="option-btn option-btn--primary" [ngClass]="{ active: option === selectedOption() }"
+                (click)="onSelectOption(option)">
+                {{ option | titlecase }}
+            </button>
+        </li>
+        }
+    </ul>
+    <button class="option-btn option-btn--secondary" (click)="onClearCompleted()">
+        Clear completed
+    </button>
+</div>

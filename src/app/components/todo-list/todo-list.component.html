@@ -1,0 +1,12 @@
+<ul class="todo-list">
+    @for(todo of todos; track todo.id) {
+    <li>
+        <app-todo-item [todo]="todo" />
+    </li>
+    } @empty {
+    <li>
+        <p class="empty-list-text">No todos found</p>
+    </li>
+    }
+</ul>
+
