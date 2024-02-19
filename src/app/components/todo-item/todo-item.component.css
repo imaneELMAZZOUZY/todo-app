@@ -151,12 +151,7 @@
         letter-spacing: -0.17px;
         max-width: 80%;
     }
-    .todo-text {
-        font-size: 1.2rem;
-        line-height: 1.2rem;
-        letter-spacing: -0.17px;
-        max-width: 80%;
-    }
+
 
     .todo-date {
         font-size: 1rem;
